@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "8034dfc6-6ed2-4b04-968c-c960fb9b349e",
+		"name": "Android Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Review Fetch",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/com.dd.nitD/reviews",
+					"protocol": "https",
+					"host": [
+						"androidpublisher",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"androidpublisher",
+						"v3",
+						"applications",
+						"com.dd.nitD",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertorCreateEdit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/com.dd.nitD/edits",
+					"protocol": "https",
+					"host": [
+						"androidpublisher",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"androidpublisher",
+						"v3",
+						"applications",
+						"com.dd.nitD",
+						"edits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apks Kind",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/com.dd.nitD/edits/16637308620227333048/apks",
+					"protocol": "https",
+					"host": [
+						"androidpublisher",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"androidpublisher",
+						"v3",
+						"applications",
+						"com.dd.nitD",
+						"edits",
+						"16637308620227333048",
+						"apks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload bundle .aab",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/Users/nitinbhatia/Desktop/app-release.aab"
+					}
+				},
+				"url": {
+					"raw": "https://androidpublisher.googleapis.com/upload/androidpublisher/v3/applications/com.dd.nitD/edits/08571038577046320642/bundles",
+					"protocol": "https",
+					"host": [
+						"androidpublisher",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"upload",
+						"androidpublisher",
+						"v3",
+						"applications",
+						"com.dd.nitD",
+						"edits",
+						"08571038577046320642",
+						"bundles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "commit edit ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/com.dd.nitD/edits/08571038577046320642:commit",
+					"protocol": "https",
+					"host": [
+						"androidpublisher",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"androidpublisher",
+						"v3",
+						"applications",
+						"com.dd.nitD",
+						"edits",
+						"08571038577046320642:commit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update tracks",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"releases\": [{\n  \"versionCodes\": [\"2\"],\n  \"status\": \"draft\"\n}]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/com.dd.nitD/edits/08571038577046320642/tracks/beta",
+					"protocol": "https",
+					"host": [
+						"androidpublisher",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"androidpublisher",
+						"v3",
+						"applications",
+						"com.dd.nitD",
+						"edits",
+						"08571038577046320642",
+						"tracks",
+						"beta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list tracks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/com.dd.nitD/edits/10677743726595267891/tracks",
+					"protocol": "https",
+					"host": [
+						"androidpublisher",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"androidpublisher",
+						"v3",
+						"applications",
+						"com.dd.nitD",
+						"edits",
+						"10677743726595267891",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
