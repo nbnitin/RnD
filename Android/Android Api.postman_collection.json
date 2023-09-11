@@ -26,7 +26,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/com.dd.nitD/reviews",
+					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{{PACKAGE_NAME}}/reviews",
 					"protocol": "https",
 					"host": [
 						"androidpublisher",
@@ -37,7 +37,7 @@
 						"androidpublisher",
 						"v3",
 						"applications",
-						"com.dd.nitD",
+						"{{PACKAGE_NAME}}",
 						"reviews"
 					]
 				}
@@ -56,7 +56,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/com.dd.nitD/edits",
+					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{{PACKAGE_NAME}}/edits",
 					"protocol": "https",
 					"host": [
 						"androidpublisher",
@@ -67,7 +67,7 @@
 						"androidpublisher",
 						"v3",
 						"applications",
-						"com.dd.nitD",
+						"{{PACKAGE_NAME}}",
 						"edits"
 					]
 				}
@@ -86,7 +86,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/com.dd.nitD/edits/16637308620227333048/apks",
+					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{{PACKAGE_NAME}}/edits/16637308620227333048/apks",
 					"protocol": "https",
 					"host": [
 						"androidpublisher",
@@ -97,7 +97,7 @@
 						"androidpublisher",
 						"v3",
 						"applications",
-						"com.dd.nitD",
+						"{{PACKAGE_NAME}}",
 						"edits",
 						"16637308620227333048",
 						"apks"
@@ -129,7 +129,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://androidpublisher.googleapis.com/upload/androidpublisher/v3/applications/com.dd.nitD/edits/08571038577046320642/bundles",
+					"raw": "https://androidpublisher.googleapis.com/upload/androidpublisher/v3/applications/{{PACKAGE_NAME}}/edits/08571038577046320642/bundles",
 					"protocol": "https",
 					"host": [
 						"androidpublisher",
@@ -141,7 +141,7 @@
 						"androidpublisher",
 						"v3",
 						"applications",
-						"com.dd.nitD",
+						"{{PACKAGE_NAME}}",
 						"edits",
 						"08571038577046320642",
 						"bundles"
@@ -162,7 +162,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/com.dd.nitD/edits/08571038577046320642:commit",
+					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{{PACKAGE_NAME}}/edits/08571038577046320642:commit",
 					"protocol": "https",
 					"host": [
 						"androidpublisher",
@@ -173,7 +173,7 @@
 						"androidpublisher",
 						"v3",
 						"applications",
-						"com.dd.nitD",
+						"{{PACKAGE_NAME}}",
 						"edits",
 						"08571038577046320642:commit"
 					]
@@ -202,7 +202,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/com.dd.nitD/edits/08571038577046320642/tracks/beta",
+					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{{PACKAGE_NAME}}/edits/08571038577046320642/tracks/beta",
 					"protocol": "https",
 					"host": [
 						"androidpublisher",
@@ -213,7 +213,7 @@
 						"androidpublisher",
 						"v3",
 						"applications",
-						"com.dd.nitD",
+						"{{PACKAGE_NAME}}",
 						"edits",
 						"08571038577046320642",
 						"tracks",
@@ -235,7 +235,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/com.dd.nitD/edits/10677743726595267891/tracks",
+					"raw": "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{{PACKAGE_NAME}}/edits/10677743726595267891/tracks",
 					"protocol": "https",
 					"host": [
 						"androidpublisher",
@@ -246,7 +246,7 @@
 						"androidpublisher",
 						"v3",
 						"applications",
-						"com.dd.nitD",
+						"{{PACKAGE_NAME}}",
 						"edits",
 						"10677743726595267891",
 						"tracks"
