@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "51208860-62c7-4ba9-a817-e93b0f16ce9f",
+		"name": "Slack Apis Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://slack.com/api/chat.postMessage",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ENTER YOUR TOKEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"channel\":\"CHANNEL_ID\",\n    \"text\": \"Just testing few tokens\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://slack.com/api/chat.postMessage",
+					"protocol": "https",
+					"host": [
+						"slack",
+						"com"
+					],
+					"path": [
+						"api",
+						"chat.postMessage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request to particular channel, CHANNEL NAME",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"text\":\"Test\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "YOUR WEB HOOK URL",
+					"protocol": "https",
+					"host": [
+						"hooks",
+						"slack",
+						"com"
+					],
+					"path": [
+						"services",
+						"T04N7MX42",
+						"B05J66CNLH1",
+						"DBifjRjQaWyQ0IX8E5CgTOzZ"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://slack.com/api/chat.delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ENTER YOUR TOKEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"channel\":\"CHANNEL_ID\",\n    \"ts\":\"1690179223.364729\"\n}"
+				},
+				"url": {
+					"raw": "https://slack.com/api/chat.delete",
+					"protocol": "https",
+					"host": [
+						"slack",
+						"com"
+					],
+					"path": [
+						"api",
+						"chat.delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post message with mentioning",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ENTER YOUR TOKEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"channel\":\"CHANNEL_ID\",\n    \"text\": \"hi <@Member_ID>\"  /*Click on a user name within Slack.\nClick on \"View full profile\" in the menu that appears.\nClick the ellipses (three dots).\nClick on \"Copy Member ID\".*/\n    \n}\n\n"
+				},
+				"url": {
+					"raw": "https://slack.com/api/chat.postMessage",
+					"protocol": "https",
+					"host": [
+						"slack",
+						"com"
+					],
+					"path": [
+						"api",
+						"chat.postMessage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search user by email id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ENTER YOUR TOKEN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://slack.com/api/users.lookupByEmail?email=YOUR EMAIL ID",
+					"protocol": "https",
+					"host": [
+						"slack",
+						"com"
+					],
+					"path": [
+						"api",
+						"users.lookupByEmail"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "YOUR EMAIL ID"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://slack.com/api/chat.delete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://slack.com/api/chat.delete",
+					"protocol": "https",
+					"host": [
+						"slack",
+						"com"
+					],
+					"path": [
+						"api",
+						"chat.delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
