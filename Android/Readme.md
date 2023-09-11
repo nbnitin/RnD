@@ -31,7 +31,7 @@ A. Create Service Account(You have to login from owner's email into google play 
 
 now go to where your json is stored, and download sh files from this repo and put all files (JSON, 2 sh files) at same location
 
-and run this command to generate JWT token(JSON Web Token) sh accesstoken.sh ./service_account https://www.googleapis.com/auth/androidpublisher
+and run this command to generate JWT token(JSON Web Token) sh accesstoken.sh ./service_account.json https://www.googleapis.com/auth/androidpublisher
 
 exaplaination for above shell command
 ./ -> current directory
