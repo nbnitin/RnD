@@ -79,7 +79,7 @@
 					}
 				},
 				"url": {
-					"raw": "JIRA BASE URL OF YOUR ORGANISATION/rest/api/3/project/nitin/permissionscheme",
+					"raw": "https://JIRA BASE URL OF YOUR ORGANISATION/rest/api/3/project/nitin/permissionscheme",
 					"protocol": "https",
 					"host": [
 						"XYZ",
@@ -285,7 +285,7 @@
 			"response": []
 		},
 		{
-			"name": "https://cJIRA BASE URL OF YOUR ORGANISATION/rest/api/3/user/assignable/search?project=NITIN",
+			"name": "https://JIRA BASE URL OF YOUR ORGANISATION/rest/api/3/user/assignable/search?project=NITIN",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
