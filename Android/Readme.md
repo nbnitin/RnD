@@ -38,7 +38,7 @@ exaplaination for above shell command
 service_account.json -> json file name which you get from service account creation steps
 https://www.googleapis.com/auth/androidpublisher -> Scope this is mentioned on google developer api page 
 
-<img width="500" alt="Screenshot 2023-09-06 at 2 26 49 PM" src="https://github.com/nbnitin/RnD/assets/5785670/0e246cc9-ff5d-41b4-8de9-03297fa5dba7">
+<img width="762" alt="Screenshot 2023-09-06 at 2 26 49 PM" src="https://github.com/nbnitin/RnD/assets/5785670/6afe501d-60ee-4125-b338-12b51e2ecfae">
 
 
 
