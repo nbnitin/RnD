@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <script>
+            var fileData = "";
+            function testClick() {
+                // no file selected to read
+                
+               // console.log(document.getElementById("file"));
+                
+                upload();
+                
+               
+                
+            }
+            
+            function upload() {
+                
+
+                // WARNING: For POST requests, body is set to null by browsers.
+                var data = document.getElementById("file").files[0];
+                var xhr = new XMLHttpRequest();
+                xhr.withCredentials = true;
+
+                xhr.addEventListener("readystatechange", function() {
+                  if(this.readyState === 4) {
+                    console.log(this.responseText);
+                  }
+                });
+
+                xhr.open("POST", "https://androidpublisher.googleapis.com/upload/androidpublisher/v3/applications/com.dd.nitD/edits/07437019142188218246/bundles");
+                xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:9000');
+                xhr.setRequestHeader("Authorization", "Bearer Token");
+                xhr.setRequestHeader("Content-Type", "application/octet-stream");
+
+                xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+                xhr.send(data)
+            }
+        </script>
+    </head>
+    <body>
+        <input type="file" id="file" />
+        <button id="read-file" onclick="testClick()">Read File</button>
+</body>
+</html>
+
+
+
+<!-- matt's code -->
+<!--<input type="file" id="fileInput">
+<button type="button"onclick="sendData()">Send Data</button>
+function sendData() {
+
+
+  // WARNING: For POST requests, body is set to null by browsers.
+  var data = document.getElementById("fileInput").files[0];
+
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+
+  xhr.addEventListener("readystatechange", function() {
+    if(this.readyState === 4) {
+      console.log(this.responseText);
+    }
+  });
+
+xhr.open("POST", "https://androidpublisher.googleapis.com/upload/androidpublisher/v3/applications/com.dd.nitD/edits/07437019142188218246/bundles");
+xhr.setRequestHeader("Content-Type", "application/octet-stream");
+xhr.setRequestHeader("Authorization", "Bearer ya29.c.b0Aaekm1LBAuH6aunjdwstv3UDk4EOQdd1f0sSYTU_qhXK-F0cDC_LOfSNDr9Z7HP_Z45pDLcnwCUrCItsSFJOScYJaTTg0bC8STIfQOmaIJ8Q0FDCqqUNx90TEWIwCmNsbC53u2SDuIIUtLi-IFi9scBF5JzcyLgw8MRHyp3gqM_djBtD3jI3m2EHuvjctMkzn0rQcnG_5QGrHB0fdYCgGtibqiUqdWeiPzVTqJUMP98Rc2_A2L_e39NLMWHlZfaGxJ5ogf_iMzXg5k335VxdcUEUINyoT4D0lJnesvNzP4xmaEGP3rxem9HANLFEoNlhZMNy3cPa_5gG340Pnf7yfySRpy83k4zsJrZXhaOt9Juj32oo4Wk-V8q5ucIYQzOXuzmcxUO-td3bYJ0a0pB26pQW_s7_Xxq64oIZ08hS2ki4aq335lk-68yoJo9Bi39Qpmix40uzm-MpMilsz6hZczYc-393fFaFIgyyuVZ_5_jWVFU9gdb8o1Zu5Icbw8jtURU7lgmUMaSS0x8lklm8_5fccia9uJ0xhI8x59RsrVg18-d4RR_VdXusW8ne0SFhBIF1b7xRp2eabUpJF95-JkM-4V7tk9b7ZJj4qiX8i8S6wlef9obuQ4MyMdhas4v2k0aw3B-mQQZrn9ig1Q5dBky44aemX0wRvzMpw28J-0VuOpV61Z1n7w1pV8gvU8_1cQ4UIhRVI3hk0FtejnbBOo0-bQSp2eR2fJYz6Bct0Yi_IliaJ-nkOsBggYyZ81fhFtp0xQxjvJW0Mwid5Mb1ubalqhXnkOv3yVtj8axh81q6kjUaucWffJM3sje38px7Z0nz22uOWah9ZFyf5eYnSsV1h4VmthmUrXYtkzWxRilqeU7zaykqrYBajZSvbd5zVXVgWXFXW-07v5mjlbld0b2MQW4-ZOgV-yqqi92n6kU2ZZ1Z8Mh_hjS3OZa9FU3MpR2lj9Yds24W-4jpMyfUzOhuWu9lXFWMRsca1jdIfkxx_eYk3UpVIck");
+  
+    xhr.onload = (event) => {
+  console.log(event);
+};
+
+  xhr.send(data);
+
+}-->
