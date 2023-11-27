@@ -1,0 +1,181 @@
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+            }
+            
+            #input-div {
+                position: absolute;
+                width: 100%;
+                height: 13%;
+                background: #d3d3d340;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            
+            
+            #question-send {
+                width:10%;
+                height:100%;
+                float:left;
+                position: relative;
+            }
+            
+            #question-send > button {
+                width: 100%;
+                height: 30px;
+                border-radius: 10px;
+                position: absolute;
+                bottom: 10px;
+                right: 2px;
+                
+            }
+            
+            #question-input {
+                width: 98%;
+                height: 80px;
+                border-radius: 10px;
+                resize: none;
+                position: absolute;
+                bottom: 10px;
+                margin-left: 10px;
+                padding:0.5%
+            }
+            
+            #question-input-container {
+                width: 90%;
+                height: 100%;
+                float: left;
+                position: relative;
+            }
+            
+            #ans-container {
+                width: 100%;
+                height: 87%;
+                overflow: scrollbale;
+                word-wrap: break-word;
+                background: lightgrey;
+                border-bottom-style: outset;
+                border-bottom-color: darkseagreen;
+                border-bottom-width: 1px;
+            }
+            }
+            
+            #ans-container p {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            
+            #ans-area {
+                padding: 10px;
+            }
+            
+            .loader {
+              border: 16px solid #f3f3f3; /* Light grey */
+              border-top: 16px solid #3498db; /* Blue */
+              border-radius: 50%;
+              width: 120px;
+              height: 120px;
+              animation: spin 2s linear infinite;
+              position: absolute;
+                    top: 25%;
+                    left: 40%;
+            }
+            
+            #loader-container {
+                display: none;
+                width: 100%;
+                height: 100%;
+            }
+
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+            
+        </style>
+        
+        <script>
+            function send() {
+                document.getElementById("loader-container").style.display = "block";
+                document.getElementById("ans-area").innerHTML = "";
+                
+                
+                var ItemJSON;
+                
+                var question = document.getElementById("question-input").value;
+                
+                ItemJSON = '{ "model": "gpt-3.5-turbo", "temperature": 0.69999999999999996, "messages": [{"content": "'+ question +'","role": "user"}] }';
+                
+                URL = "https://api.openai.com/v1/chat/completions";  //Your URL
+                
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                       // Typical action to be performed when the document is ready:
+                      
+                        callbackFunction(this);
+                    } else {
+                        callbackFunction(this);
+                        }
+                };
+                xmlhttp.open("POST", URL, false);
+                xmlhttp.setRequestHeader("Content-Type", "application/json");
+                xmlhttp.setRequestHeader('Authorization', 'Bearer ' + "ENTER YOUR API KEY"); //in prod, you should encrypt user name and password and provide encrypted keys here instead
+                xmlhttp.send(ItemJSON);
+                 //document.getElementById("ans-area").innerHTML = xmlhttp.statusText + ":" + xmlhttp.status + "<BR><textarea rows='100' cols='100'>" + xmlhttp.responseText + "</textarea>";
+            }
+            
+            function callbackFunction(xmlhttp) {
+               // console.log(JSON.parse(xmlhttp.responseText).choices[0].message.content);
+               
+                    var json = JSON.parse(xmlhttp.responseText);
+                    txt = json.choices[0].message.content;
+                    typeWriter();
+                    document.getElementById("loader-container").style.display = "none";
+            }
+            
+            var i = 0;
+            var speed = 50; /* The speed/duration of the effect in milliseconds */
+            var txt = "Oooops Something went wrong, please try after 1min.";
+
+            function typeWriter() {
+                
+              if ( i < txt.length ) {
+                document.getElementById("ans-area").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+              }
+            }
+        </script>
+        
+        
+        
+    </head>
+    
+    <body>
+        <div id="loader-container">
+                <div id="loader" class="loader"></div>
+        </div>
+        <div id="ans-container">
+            <p id="ans-area">
+            </p>
+        </div>
+        
+        <div id="input-div">
+            <div id ="question-input-container" >
+                <textarea placeholder="What do you want to know..." id="question-input"></textarea>
+            </div>
+            <div id="question-send">
+                <button onclick = "send()"> Send </button>
+            </div>
+        </div>
+        
+        
+    </body>
+    
+    
+</html>
+
